@@ -27,10 +27,13 @@ const Drawer = ({ lotteries }: { lotteries: Lottery[] }) => {
         )}
       />
       <div
-        className={clsx("transition-all h-full text-lg text-slate-800", {
-          "w-3/5 sm:w-96": drawerOpen,
-          "w-0": !drawerOpen,
-        })}
+        className={clsx(
+          "transition-all h-full text-lg text-slate-800 overflow-auto pb-12",
+          {
+            "w-3/5 sm:w-96": drawerOpen,
+            "w-0": !drawerOpen,
+          }
+        )}
       >
         <Link href="/">
           <div className="p-4">Todas las loterías</div>
