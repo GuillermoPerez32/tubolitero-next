@@ -66,11 +66,11 @@ export default async function LotteryDetail({ params: { slug } }: Props) {
 
       <div className="mt-12 px-8">
         <h2 className="text-center text-2xl">Resultados anteriores</h2>
-        <div className="flex justify-between my-6 text-lg text-slate-600">
+        <div className="flex justify-between my-6 text-lg text-slate-600 w-72 mx-auto">
           <span>Fecha</span>
           <span>Resultado</span>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col items-center gap-3">
           {anteriores.map((result) => (
             <HistoryCard key={result.fecha.toString()} result={result} />
           ))}
