@@ -53,7 +53,7 @@ export default async function LotteryDetail({ params: { slug } }: Props) {
           </div>
         }
       />
-      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center gap-4">
         {ultimo_dia.map((result, i) => (
           <LotteryDetailCard
             key={result.fecha.toString()}
