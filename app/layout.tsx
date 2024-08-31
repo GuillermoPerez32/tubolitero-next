@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { currentYear } from "@/lib/constants/dates";
 import { AppContextProvider } from "@/components/AppContextProvider";
+import { fetchAllLotteries } from "@/lib/api/lotteries";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,15 +27,19 @@ export const metadata: Metadata = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const lotteries = await fetchAllLotteries();
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppContextProvider>{children}</AppContextProvider>
+        <AppContextProvider lotteries={lotteries}>
+          {children}
+        </AppContextProvider>
       </body>
     </html>
   );

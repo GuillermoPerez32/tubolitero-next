@@ -2,8 +2,15 @@
 import { ReactNode, useState } from "react";
 import AppContext from "../lib/utils/AppContext";
 import Drawer from "./Drawer";
+import { Lottery } from "@/lib/types/LotteryResponse";
 
-export const AppContextProvider = ({ children }: { children: ReactNode }) => {
+export const AppContextProvider = ({
+  children,
+  lotteries,
+}: {
+  children: ReactNode;
+  lotteries: Lottery[];
+}) => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -13,7 +20,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         toggleDrawer: () => setDrawerOpen(!drawerOpen),
       }}
     >
-      <Drawer />
+      <Drawer lotteries={lotteries} />
       {children}
     </AppContext.Provider>
   );
