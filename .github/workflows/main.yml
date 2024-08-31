@@ -23,6 +23,9 @@ jobs:
             cd /var/www/html/tubolitero-next/
             git pull
 
+            source ~/.nvm/nvm.sh
+            nvm use 20
+
             pnpm i
             pnpm run build
 
