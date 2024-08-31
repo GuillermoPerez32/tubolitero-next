@@ -36,19 +36,19 @@ const Drawer = ({ lotteries }: { lotteries: Lottery[] }) => {
           <div className="p-4">Todas las loterías</div>
         </Link>
         <div className="h-[1px] w-full bg-slate-500" />
-        <Link href="/">
+        <a href="https://whatsapp.com/channel/0029VaCVnwn9mrGZA0iKjd0t">
           <div className="p-4 flex items-center gap-2">
             <div>Sigenos en</div>
             <Image src="/wa.png" alt="whatsapp logo" width={35} height={35} />
           </div>
-        </Link>
+        </a>
         <div className="h-[1px] w-full bg-slate-500" />
-        <Link href="/">
+        <a href="https://t.me/Tu_boliteros">
           <div className="p-4 flex items-center gap-2">
             <div>Sigenos en</div>
             <Image src="/t.png" alt="whatsapp logo" width={35} height={35} />
           </div>
-        </Link>
+        </a>
         {lotteries.map(({ id, nombre, slug, logo }) => (
           <>
             <div className="h-[1px] w-full bg-slate-500" />
