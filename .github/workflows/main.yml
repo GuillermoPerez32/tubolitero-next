@@ -1,0 +1,30 @@
+name: Actualizar en VPS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
+
+      - name: Conectar al VPS y actualizar
+        uses: appleboy/ssh-action@master
+        with:
+          host: 206.189.238.9
+          username: ${{ secrets.VPS_USERNAME }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script: |
+            cd /var/www/html/tubolitero-next/
+            git pull
+
+            pnpm i
+            pnpm run build
+
+            pm2 restart ${{secrets.PROCESS_ID}}
+            sudo service nginx restart

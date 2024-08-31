@@ -15,7 +15,7 @@ export default async function Home() {
       <AppBar title={`Tu Bolitero ${currentYear}`} />
       <div className="w-full mt-8">
         <Link
-          href={apkData?.apk || "#"}
+          href={apkData?.apk.replace("http", "https") || "#"}
           className="mx-auto flex justify-center items-center gap-4 w-60"
         >
           <p className="font-bold text-xl">Descarga la apk</p>
