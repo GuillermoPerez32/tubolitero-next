@@ -66,7 +66,7 @@ export default async function LotteryDetail({ params: { slug } }: Props) {
 
       <div className="mt-12 px-8">
         <h2 className="text-center text-2xl">Resultados anteriores</h2>
-        <div className="flex justify-between my-6 text-lg">
+        <div className="flex justify-between my-6 text-lg text-slate-600">
           <span>Fecha</span>
           <span>Resultado</span>
         </div>

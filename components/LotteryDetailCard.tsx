@@ -45,7 +45,7 @@ const LotteryDetailCard = ({
       </div>
       <div className="h-auto w-[1px] bg-black mx-8" />
       <div className="flex flex-col items-center justify-between">
-        <div>
+        <div className="flex flex-col items-center">
           {pick3_logo ? (
             <Image
               src={`${API_HOST}${pick3_logo}`}
@@ -63,7 +63,7 @@ const LotteryDetailCard = ({
           )}
           <div>{pick3}</div>
         </div>
-        <div>
+        <div className="flex flex-col items-center">
           {pick4_logo ? (
             <Image
               src={`${API_HOST}${pick4_logo}`}
