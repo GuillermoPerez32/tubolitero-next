@@ -41,7 +41,7 @@ const Drawer = ({ lotteries }: { lotteries: Lottery[] }) => {
         <div className="h-[1px] w-full bg-slate-500" />
         <a href="https://whatsapp.com/channel/0029VaCVnwn9mrGZA0iKjd0t">
           <div className="p-4 flex items-center gap-2">
-            <div>Sigenos en</div>
+            <div>Síguenos en</div>
             <Image
               className="ml-auto"
               src="/wa.png"
@@ -54,7 +54,7 @@ const Drawer = ({ lotteries }: { lotteries: Lottery[] }) => {
         <div className="h-[1px] w-full bg-slate-500" />
         <a href="https://t.me/Tu_boliteros">
           <div className="p-4 flex items-center gap-2">
-            <div>Sigenos en</div>
+            <div>Síguenos en</div>
             <Image
               className="ml-auto"
               src="/t.png"
