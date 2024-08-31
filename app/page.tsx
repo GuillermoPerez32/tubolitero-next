@@ -1,7 +1,6 @@
 import { currentYear } from "@/lib/constants/dates";
 import { fetchApkInfo } from "@/lib/api/apk";
 import { fetchAllLotteries } from "@/lib/api/lotteries";
-import clsx from "clsx";
 import LotteryCard from "@/components/LotteryCard";
 import Link from "next/link";
 import AppBar from "@/components/AppBar";

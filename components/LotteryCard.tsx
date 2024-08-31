@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const LotteryCard = ({
-  lottery: { id, nombre, logo, ultima, slug },
+  lottery: { nombre, logo, ultima, slug, pick3_logo, pick4_logo },
   color,
 }: {
   lottery: Lottery;
@@ -42,7 +42,7 @@ const LotteryCard = ({
             {ultima.pick3[2]}
           </div>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-evenly">
           <div className="flex">
             <div className="bg-amber-600 p-1 rounded-full size-[30px] flex items-center justify-center">
               {ultima.pick4[0]}

@@ -1,17 +1,15 @@
 "use client";
-import { useContext } from "react";
+import { ReactNode, useContext } from "react";
 import AppContext from "../lib/utils/AppContext";
 import Link from "next/link";
 import { Routes } from "../lib/constants/routes";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-const AppBar = ({ title }: { title: string }) => {
+const AppBar = ({ title }: { title: ReactNode }) => {
   const { toggleDrawer } = useContext(AppContext);
 
   const path = usePathname();
-
-  console.log(path);
 
   return (
     <div className="flex items-center p-2">

@@ -1,16 +1,18 @@
+import AppBar from "@/components/AppBar";
+import HistoryCard from "@/components/HistoryCard";
+import LotteryDetailCard from "@/components/LotteryDetailCard";
 import { fetchLotteryBySlug } from "@/lib/api/lotteries";
+import { API_HOST } from "@/lib/constants/endpoints";
 import moment from "moment";
 import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 import React from "react";
 
 type Props = {
   params: { slug: string };
 };
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
   const slug = params.slug;
 
@@ -33,6 +35,47 @@ export async function generateMetadata(
 }
 
 export default async function LotteryDetail({ params: { slug } }: Props) {
-  const lotteryDetail = await fetchLotteryBySlug(slug);
-  return <div>LotteryDetail: {lotteryDetail.nombre}</div>;
+  const lottery = await fetchLotteryBySlug(slug);
+  const { nombre, ultimo_dia, logo, anteriores } = lottery;
+
+  return (
+    <>
+      <AppBar
+        title={
+          <div className="flex items-center gap-2">
+            <span>Lotería {nombre}</span>
+            <Image
+              src={`${API_HOST}${logo}`}
+              alt="logo"
+              width={45}
+              height={45}
+            />
+          </div>
+        }
+      />
+      <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center">
+        {ultimo_dia.map((result, i) => (
+          <LotteryDetailCard
+            key={result.fecha.toString()}
+            result={result}
+            color={i % 2 === 0 ? "purple" : "sky"}
+            lottery={lottery}
+          />
+        ))}
+      </div>
+
+      <div className="mt-12 px-8">
+        <h2 className="text-center text-2xl">Resultados anteriores</h2>
+        <div className="flex justify-between my-6 text-lg">
+          <span>Fecha</span>
+          <span>Resultado</span>
+        </div>
+        <div className="flex flex-col gap-3">
+          {anteriores.map((result) => (
+            <HistoryCard key={result.fecha.toString()} result={result} />
+          ))}
+        </div>
+      </div>
+    </>
+  );
 }

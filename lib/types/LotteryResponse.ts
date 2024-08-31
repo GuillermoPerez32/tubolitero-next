@@ -15,6 +15,7 @@ export interface Registro {
   pick4: string;
   tirada: number;
   fecha_siguiente: Date;
+  horario: string;
 }
 
 export interface LotteryDetail {
