@@ -20,7 +20,7 @@ export default async function Home() {
         >
           <p className="font-bold text-xl">Descarga la apk</p>
           <Image
-            className="animate-bounce"
+            className="animate-bounce rounded-full"
             src="/apk-logo.png"
             alt="logo de la apk"
             width={50}
