@@ -11,12 +11,13 @@ type Props = {
 
 function HistoryCard({ result: { pick3, pick4, horario, fecha } }: Props) {
   const date = moment(fecha);
-  const formattedDay = date.format("DD-MM-YYYY");
-  const formattedHour = date.format("l");
+  const formattedDate = date.format("DD-MM-YYYY");
+  const formattedHour = date.format("h:mm a");
+
   return (
     <div className="w-80 p-4 shadow-sm bg-stone-200 rounded-lg flex justify-between">
       <div className="text-lg">
-        <p>{formattedDay}</p>
+        <p>{formattedDate}</p>
         <div className="flex items-center gap-2">
           <span>{formattedHour}</span>
           <Image

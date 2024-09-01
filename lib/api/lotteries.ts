@@ -9,7 +9,7 @@ export const fetchAllLotteries = unstable_cache(
     return (await response.json()) as Lottery[];
   },
   ["lotteryList"],
-  { revalidate: 3600, tags: ["lotteryList"] }
+  { revalidate: 10, tags: ["lotteryList"] }
 );
 
 export const fetchLotteryBySlug = unstable_cache(

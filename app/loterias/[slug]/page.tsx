@@ -1,6 +1,6 @@
 import AppBar from "@/components/AppBar";
 import HistoryCard from "@/components/HistoryCard";
-import LotteryDetailCard from "@/components/LotteryDetailCard";
+import LotteryCard from "@/components/LotteryCard";
 import { fetchLotteryBySlug } from "@/lib/api/lotteries";
 import { API_HOST } from "@/lib/constants/endpoints";
 import moment from "moment";
@@ -55,7 +55,7 @@ export default async function LotteryDetail({ params: { slug } }: Props) {
       />
       <div className="grid grid-cols-1 sm:grid-cols-3 justify-items-center gap-4">
         {ultimo_dia.map((result, i) => (
-          <LotteryDetailCard
+          <LotteryCard
             key={result.fecha.toString()}
             result={result}
             color={i % 2 === 0 ? "purple" : "sky"}

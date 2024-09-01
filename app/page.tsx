@@ -2,7 +2,6 @@ import { currentYear } from "@/lib/constants/dates";
 import { fetchApkInfo } from "@/lib/api/apk";
 import { fetchAllLotteries } from "@/lib/api/lotteries";
 import LotteryCard from "@/components/LotteryCard";
-import Link from "next/link";
 import AppBar from "@/components/AppBar";
 import Image from "next/image";
 
@@ -33,6 +32,7 @@ export default async function Home() {
           <LotteryCard
             key={lottery.id}
             lottery={lottery}
+            result={lottery.ultima}
             color={i % 2 === 0 ? "sky" : "purple"}
           />
         ))}
