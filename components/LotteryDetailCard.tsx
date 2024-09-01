@@ -46,39 +46,25 @@ const LotteryDetailCard = ({
       <div className="h-auto w-[1px] bg-black mx-8" />
       <div className="flex flex-col items-center justify-between">
         <div className="flex flex-col items-center">
-          {pick3_logo ? (
+          {
             <Image
-              src={`${API_HOST}${pick3_logo}`}
+              src={pick3_logo ? `${API_HOST}${pick3_logo}` : "/pick3.png"}
               alt="pick3-logo"
-              height={25}
-              width={40}
+              height={40}
+              width={60}
             />
-          ) : (
-            <div className="flex">
-              <span>Pick</span>
-              <div className="bg-yellow-200 p-2 rounded-full size-6 ml-3 text-lg flex justify-center items-center">
-                3
-              </div>
-            </div>
-          )}
+          }
           <div>{pick3}</div>
         </div>
         <div className="flex flex-col items-center">
-          {pick4_logo ? (
+          {
             <Image
-              src={`${API_HOST}${pick4_logo}`}
+              src={pick4_logo ? `${API_HOST}${pick4_logo}` : "/pick4.png"}
               alt="pick4-logo"
-              height={25}
-              width={40}
+              height={40}
+              width={60}
             />
-          ) : (
-            <div className="flex">
-              <span>Pick</span>
-              <div className="bg-green-200 p-2 rounded-full size-6 ml-3 text-lg flex justify-center items-center">
-                4
-              </div>
-            </div>
-          )}
+          }
           <div>{pick4}</div>
         </div>
       </div>

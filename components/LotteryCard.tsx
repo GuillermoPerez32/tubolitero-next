@@ -30,8 +30,14 @@ const LotteryCard = ({
         {moment(ultima.fecha).format("l")}
       </p>
 
-      <div className="text-white font-bold mt-2 w-44 flex flex-col gap-2">
-        <div className="flex justify-center gap-1">
+      <div className="text-white font-bold mt-2 grid grid-cols-3 place-items-center gap-2">
+        <Image
+          src={pick3_logo ? `${API_HOST}${pick3_logo}` : "/pick3.png"}
+          alt="pick3-logo"
+          height={40}
+          width={60}
+        />
+        <div className="flex justify-center gap-1 col-span-2">
           <div className="bg-lime-600 p-1 rounded-full size-[30px] flex items-center justify-center">
             {ultima.pick3[0]}
           </div>
@@ -42,7 +48,13 @@ const LotteryCard = ({
             {ultima.pick3[2]}
           </div>
         </div>
-        <div className="flex justify-evenly">
+        <Image
+          src={pick4_logo ? `${API_HOST}${pick4_logo}` : "/pick4.png"}
+          alt="pick4-logo"
+          height={40}
+          width={60}
+        />
+        <div className="flex justify-evenly col-span-2">
           <div className="flex">
             <div className="bg-amber-600 p-1 rounded-full size-[30px] flex items-center justify-center">
               {ultima.pick4[0]}
@@ -51,7 +63,7 @@ const LotteryCard = ({
               {ultima.pick4[1]}
             </div>
           </div>
-          <div className="flex">
+          <div className="flex ml-4">
             <div className="bg-fuchsia-600 p-1 rounded-full size-[30px] flex items-center justify-center">
               {ultima.pick4[2]}
             </div>

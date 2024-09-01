@@ -4,7 +4,7 @@ import LotteryDetailCard from "@/components/LotteryDetailCard";
 import { fetchLotteryBySlug } from "@/lib/api/lotteries";
 import { API_HOST } from "@/lib/constants/endpoints";
 import moment from "moment";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 
